@@ -103,6 +103,19 @@ const option = computed(() => {
         })),
       },
     ],
+    graphic: [
+      {
+        type: 'image',
+        right: '5%',
+        top: '3%',
+        style: {
+          image: `${import.meta.env.BASE_URL}qrcode.png`,
+          width: 80,
+          height: 80,
+          opacity: 0.85,
+        },
+      },
+    ],
     media: [
       {
         query: { maxWidth: 600 },
@@ -124,6 +137,11 @@ const option = computed(() => {
             itemWidth: 42,
             textStyle: { fontSize: 14 },
           },
+          graphic: [
+            {
+              style: { width: 56, height: 56 },
+            },
+          ],
           series: [
             {
               roam: false,
