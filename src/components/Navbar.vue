@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import { eventBus, isDark } from '@/state'
+import { CITY_LIST } from '@/const'
+import { data, eventBus, isDark } from '@/state'
 
 async function download() {
   eventBus.emit({ name: 'share' })
+}
+function reset() {
+  data.value = CITY_LIST.map(() => 0)
 }
 const toggleDark = useToggle(isDark)
 </script>
@@ -39,6 +43,9 @@ const toggleDark = useToggle(isDark)
       </div>
       <div text="xl lg:text-2xl">安徽制霸</div>
       <div class="flex items-center">
+        <button icon-btn m="x2" @click="reset">
+          <div i-ep:delete title="清空" />
+        </button>
         <button icon-btn m="x2" @click="download">
           <div i-ep:download title="下载图片" />
         </button>
