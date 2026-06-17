@@ -125,21 +125,19 @@ const option = computed(() => {
               textStyle: { fontSize: 26 },
             },
             {
-              textStyle: { fontSize: 30 },
+              textStyle: { fontSize: 28 },
             },
           ],
           visualMap: {
-            orient: 'horizontal',
-            left: 'center',
-            right: 'auto',
-            bottom: '3%',
-            itemHeight: 16,
-            itemWidth: 42,
+            itemHeight: 18,
+            itemWidth: 48,
             textStyle: { fontSize: 14 },
           },
           graphic: [
             {
-              style: { width: 56, height: 56 },
+              top: '3%',
+              right: '3%',
+              style: { width: 44, height: 44 },
             },
           ],
           series: [
