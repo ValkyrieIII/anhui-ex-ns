@@ -60,7 +60,7 @@ const option = computed(() => {
     visualMap: {
       type: 'piecewise',
       right: '5%',
-      bottom: '5%',
+      bottom: '3%',
       orient: 'vertical',
       min: -1,
       max: 5,
