@@ -20,9 +20,9 @@ const currentValue = computed({
   set(value) {
     if (isDefined(currentIndex)) {
       data.value[currentIndex.value] = value
-      nextTick(() => {
+      setTimeout(() => {
         unref(chartRef)?.dispatchAction({ type: 'hideTip' })
-      })
+      }, 100)
     }
   },
 })
