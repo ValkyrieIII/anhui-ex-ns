@@ -186,8 +186,8 @@ function downLoad() {
     ctx.drawImage(chartImg, 0, 0)
 
     qrImg.onload = () => {
-      const size = Math.round(chartImg.width * 0.1)
-      const margin = Math.round(chartImg.width * 0.04)
+      const size = Math.round(chartImg.width * 0.14)
+      const margin = Math.round(chartImg.width * 0.03)
       ctx.drawImage(qrImg, chartImg.width - size - margin, margin, size, size)
       canvas.toBlob((blob) => {
         if (blob) saveAs(blob, `安徽制霸-${Date.now()}.png`)
