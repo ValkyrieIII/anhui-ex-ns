@@ -10,6 +10,5 @@ declare module '@vue/runtime-core' {
     AMap: typeof import('./../src/components/AMap.vue')['default']
     Navbar: typeof import('./../src/components/Navbar.vue')['default']
     Selector: typeof import('./../src/components/Selector.vue')['default']
-    SwitchType: typeof import('./../src/components/SwitchType.vue')['default']
   }
 }

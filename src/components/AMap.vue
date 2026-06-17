@@ -4,13 +4,8 @@ import type { ECharts } from 'echarts'
 import { registerMap } from 'echarts/core'
 import { saveAs } from 'file-saver'
 import { LEVEL_LIST, CITY_LIST } from '@/const'
-import SimpleSVG from '@/assets/map/simple.svg?raw'
 import AnhuiJSON from '@/assets/map/anhui.json'
-import { chartType, data, eventBus, isDark, score } from '@/state'
-
-registerMap('simple', {
-  svg: SimpleSVG,
-})
+import { data, eventBus, isDark, score } from '@/state'
 
 registerMap('anhui', AnhuiJSON as any)
 
@@ -27,10 +22,6 @@ const currentValue = computed({
   },
 })
 
-watch(chartType, () => {
-  unref(chartRef)?.clear()
-})
-
 const option = computed(() => {
   return {
     backgroundColor: 'transparent',
@@ -41,7 +32,7 @@ const option = computed(() => {
         top: '5%',
         textStyle: {
           fontSize: 40,
-          fontFamily: 'jldys',
+          fontFamily: 'Noto Serif SC',
         },
       },
       {
@@ -50,7 +41,7 @@ const option = computed(() => {
         bottom: '5%',
         textStyle: {
           fontSize: 45,
-          fontFamily: 'jldys',
+          fontFamily: 'Noto Serif SC',
         },
       },
     ],
@@ -85,17 +76,17 @@ const option = computed(() => {
       itemWidth: 60,
       textStyle: {
         fontSize: 18,
-        fontFamily: 'jldys',
+        fontFamily: 'Noto Serif SC',
       },
     },
     series: [
       {
         type: 'map',
-        map: chartType.value === 'normal' ? 'anhui' : 'simple',
+        map: 'anhui',
         roam: true,
         label: {
-          show: chartType.value === 'normal',
-          fontFamily: 'jldys',
+          show: true,
+          fontFamily: 'Noto Serif SC',
         },
         itemStyle: {
           borderWidth: 2,
@@ -129,7 +120,7 @@ function downLoad() {
     pixelRatio: 2,
     backgroundColor: unref(isDark) ? '#333' : '#efb4b4',
   })
-  if (dataURL) saveAs(dataURL, `安徽制霸-${unref(chartType)}-${Date.now()}.png`)
+  if (dataURL) saveAs(dataURL, `安徽制霸-${Date.now()}.png`)
 }
 </script>
 

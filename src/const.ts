@@ -26,4 +26,3 @@ export const LEVEL_LIST = [
 ]
 
 export const CACHE_KEY = 'anhui-ex-levels'
-export const CHART_TYPE = 'chart-type'

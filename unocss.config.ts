@@ -13,7 +13,7 @@ export default defineConfig({
       primary: '#ff7e7e',
     },
     fontFamily: {
-      default: 'jldys',
+      default: 'Noto Serif SC',
     },
   },
   presets: [

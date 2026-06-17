@@ -1,8 +1,6 @@
-import { CACHE_KEY, CHART_TYPE, CITY_LIST } from '@/const'
+import { CACHE_KEY, CITY_LIST } from '@/const'
 
 export const isDark = useDark()
-
-export const chartType = useLocalStorage<ChartType>(CHART_TYPE, 'normal')
 
 export const eventBus = useEventBus<{ name: 'share' }>('chart-event-bus')
 
