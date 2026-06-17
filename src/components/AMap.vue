@@ -163,12 +163,34 @@ eventBus.on(({ name }) => {
 })
 
 function downLoad() {
-  const dataURL = chartRef.value?.getDataURL({
+  const chartURL = chartRef.value?.getDataURL({
     type: 'png',
     pixelRatio: 2,
     backgroundColor: unref(isDark) ? '#333' : '#efb4b4',
   })
-  if (dataURL) saveAs(dataURL, `安徽制霸-${Date.now()}.png`)
+  if (!chartURL) return
+
+  const canvas = document.createElement('canvas')
+  const chartImg = new Image()
+  const qrImg = new Image()
+
+  chartImg.onload = () => {
+    canvas.width = chartImg.width
+    canvas.height = chartImg.height
+    const ctx = canvas.getContext('2d')!
+    ctx.drawImage(chartImg, 0, 0)
+
+    qrImg.onload = () => {
+      const size = Math.round(chartImg.width * 0.1)
+      const margin = Math.round(chartImg.width * 0.04)
+      ctx.drawImage(qrImg, chartImg.width - size - margin, margin, size, size)
+      canvas.toBlob((blob) => {
+        if (blob) saveAs(blob, `安徽制霸-${Date.now()}.png`)
+      })
+    }
+    qrImg.src = `${import.meta.env.BASE_URL}qrcode.png`
+  }
+  chartImg.src = chartURL
 }
 </script>
 
