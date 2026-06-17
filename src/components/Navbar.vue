@@ -20,7 +20,7 @@ const toggleDark = useToggle(isDark)
           class="icon-btn"
           m="x-2"
           rel="noreferrer"
-          href="https://github.com/qianphong/china-ex-ns"
+          href="https://github.com/ValkyrieIII/anhui-ex-ns"
           target="_blank"
           title="GitHub"
         >
@@ -30,7 +30,7 @@ const toggleDark = useToggle(isDark)
           class="icon-btn"
           m="x-2"
           rel="noreferrer"
-          href="https://github.com/qianphong/china-ex-ns/issues"
+          href="https://github.com/ValkyrieIII/anhui-ex-ns/issues"
           target="_blank"
           title="GitHub"
         >
