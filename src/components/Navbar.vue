@@ -37,7 +37,7 @@ const toggleDark = useToggle(isDark)
           <div class="i-ep:question-filled" />
         </a>
       </div>
-      <div text="2xl">安徽制霸</div>
+      <div text="xl lg:text-2xl">安徽制霸</div>
       <div class="flex items-center">
         <button icon-btn m="x2" @click="download">
           <div i-ep:download title="下载图片" />

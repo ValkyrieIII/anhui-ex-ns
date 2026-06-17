@@ -29,7 +29,7 @@ const option = computed(() => {
       {
         text: '安徽制霸',
         left: '5%',
-        top: '5%',
+        top: '3%',
         textStyle: {
           fontSize: 40,
           fontFamily: 'Noto Serif SC',
@@ -38,7 +38,7 @@ const option = computed(() => {
       {
         text: `分数：${score.value}`,
         left: '5%',
-        bottom: '5%',
+        bottom: '3%',
         textStyle: {
           fontSize: 45,
           fontFamily: 'Noto Serif SC',
@@ -61,6 +61,7 @@ const option = computed(() => {
       type: 'piecewise',
       right: '5%',
       bottom: '5%',
+      orient: 'vertical',
       min: -1,
       max: 5,
       itemGap: 0,
@@ -87,6 +88,7 @@ const option = computed(() => {
         label: {
           show: true,
           fontFamily: 'Noto Serif SC',
+          fontSize: 12,
         },
         itemStyle: {
           borderWidth: 2,
@@ -99,6 +101,36 @@ const option = computed(() => {
           name: CITY_LIST[index],
           value: +value,
         })),
+      },
+    ],
+    media: [
+      {
+        query: { maxWidth: 600 },
+        option: {
+          title: [
+            {
+              textStyle: { fontSize: 26 },
+            },
+            {
+              textStyle: { fontSize: 30 },
+            },
+          ],
+          visualMap: {
+            orient: 'horizontal',
+            left: 'center',
+            right: 'auto',
+            bottom: '3%',
+            itemHeight: 16,
+            itemWidth: 42,
+            textStyle: { fontSize: 14 },
+          },
+          series: [
+            {
+              roam: false,
+              label: { fontSize: 10 },
+            },
+          ],
+        },
       },
     ],
   } as EChartsOption

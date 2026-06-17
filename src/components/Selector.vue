@@ -12,14 +12,14 @@ const cityName = computed(() => {
 </script>
 
 <template>
-  <div class="font-default leading-8" w="30" text="center">
+  <div class="font-default leading-8 lt-sm:leading-10" w="30" text="center">
     <div leading-10 text="lg">
       {{ cityName }}
     </div>
     <div
       v-for="(level, index) in LEVEL_LIST.slice().reverse()"
       :key="index"
-      class="cursor-pointer relative"
+      class="cursor-pointer relative lt-sm:leading-10"
       :style="{ backgroundColor: level.color }"
       @click="value = 5 - index"
     >
