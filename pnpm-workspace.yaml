@@ -1,0 +1,6 @@
+allowBuilds:
+  '@parcel/watcher': false
+  esbuild: false
+  ttf2woff2: false
+  vue-demi: false
+  vue-echarts: false
