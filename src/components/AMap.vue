@@ -18,7 +18,10 @@ const currentValue = computed({
     return isDefined(currentIndex) ? data.value[currentIndex.value] : 0
   },
   set(value) {
-    isDefined(currentIndex) && (data.value[currentIndex.value] = value)
+    if (isDefined(currentIndex)) {
+      data.value[currentIndex.value] = value
+      unref(chartRef)?.dispatchAction({ type: 'hideTip' })
+    }
   },
 })
 
